@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from './components/Header';
 import Feed from './components/Feed';
-
+import Navigation from './components/Navigation';
 function App() {
   return (
-    <div className="bg-gray-100 min-h-screen font-sans">
-      <Header />
+    <div >
+      
       <Feed />
     </div>
   );

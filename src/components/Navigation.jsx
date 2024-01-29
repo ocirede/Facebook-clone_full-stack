@@ -44,7 +44,7 @@ import { faUser, faHouse, faCog, faCheese, faMoon, faTv, faShop, faUserGroup, fa
 
   return (
     <>
-    <nav id='header' className='fixed w-full z-30 top-0 text-gray-400 flex justify-between	'>
+    <nav id='header' className=' w-full top-0 text-gray-400 flex justify-between	'>
 
     <div className="w-1/4 container  flex  items-center gap-2 mt-0 py-4 border-b border-gray-300 ">
 
