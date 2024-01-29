@@ -3,10 +3,20 @@ import './App.css'
 import SignIn from './pages/Sign-in'
 
 function App() {
+  const { user} = useUserContext();
 
   return (
-    <div className=' w-full h-full'>
-    </div>
+    <>
+
+    {user ? (
+  <div className=' w-full h-full'>
+
+  </div>
+    ) : (
+      <SignIn/>
+    )}
+  
+    </>
   )
 }
 

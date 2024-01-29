@@ -1,19 +1,18 @@
 import React, { useContext, useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import { UserContext } from '../context/UserContext';
+// import { useUserContext } from '../context/User-context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse, faCog, faCheese, faMoon, faTv, faShop, faUserGroup, faGamepad, faCubesStacked, faMessage, faBell, faEdit, faComment, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 
  const Navigation = () => {
-  // const { userState} = useContext(UserContext.getState());
+  // const { user} = useUserContext();
   const navigate = useNavigate();
   const[isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   
   const handleLogout = () => {
-   UserContext.setAuthenticated(false);
-   UserContext.setCurrentUser(null);
-    navigate('/');
+  localStorage.removeItem("token")
+    navigate('/signin');
   };
 
   const handleButtonClick = () => {

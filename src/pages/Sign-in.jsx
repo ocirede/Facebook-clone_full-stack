@@ -13,7 +13,7 @@ const SignIn = () => {
            <img
              src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"
              alt="Facebook"
-             className="w-96" // Adjust the width of the image
+             className="w-96"
            />
            <div>
              <p className="ml-10 mb-6 text-2xl text-black">
