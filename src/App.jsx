@@ -1,23 +1,15 @@
-
-import './App.css'
-import SignIn from './pages/Sign-in'
+import React from 'react';
+import Header from './components/Header';
+import Feed from './components/Feed';
 
 function App() {
-  const { user} = useUserContext();
-
   return (
-    <>
+    <div className="bg-gray-100 min-h-screen font-sans">
+      <Header />
+      <Feed />
+    </div>
+  );
 
-    {user ? (
-  <div className=' w-full h-full'>
-
-  </div>
-    ) : (
-      <SignIn/>
-    )}
-  
-    </>
-  )
 }
 
-export default App
+export default App;
