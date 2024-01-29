@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import Feed from "./components/Feed";
+import Feed from "./pages/Feed";
 import Navigation from "./components/Navigation";
 import { useUserContext } from "./context/User-context";
 import SignIn from "./pages/Sign-in";
