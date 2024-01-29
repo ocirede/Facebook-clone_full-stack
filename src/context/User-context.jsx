@@ -7,17 +7,17 @@ export const useUserContext = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [register, setRegister] = useState(false)
+  const [register, setRegister] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
- 
+
     const fetchUser = async () => {
       if (token) {
         try {
           const response = await axios.get(baseURL + "/users/loggeduser");
-          setUser(response.data);
-          console.log("fetchedUser =====>",response.data);
+          setUser(response.data.user);
+          console.log("fetchedUser =====>", response.data);
         } catch (error) {
           console.log(error);
         }
@@ -41,7 +41,7 @@ const UserProvider = ({ children }) => {
     try {
       const newUser = await axios.post(baseURL + "/users/register", body);
       e.target.reset();
-      window.location.replace("/signin")
+      window.location.replace("/signin");
     } catch (err) {
       console.log(err);
     }
@@ -50,30 +50,37 @@ const UserProvider = ({ children }) => {
   const handleSignIn = async (e) => {
     e.preventDefault();
     const body = {
-        emailOrPhone: e.target.emailOrPhone.value,
-        password: e.target.password.value
+      emailOrPhone: e.target.emailOrPhone.value,
+      password: e.target.password.value,
     };
 
     try {
-        const {data: user} = await axios.post(baseURL + "/users/login", body);
-        localStorage.setItem("token", user.token);
-        e.target.reset();
-        window.location.replace("/")
+      const { data: user } = await axios.post(baseURL + "/users/login", body);
+      localStorage.setItem("token", user.token);
+      e.target.reset();
+      window.location.replace("/");
 
-         console.log(user)
+      console.log(user);
     } catch (error) {
-        console.log(error);
-      }
-
+      console.log(error);
+    }
   };
-  const handleSetRegister = () =>{
-    setRegister(!register)
-    console.log(register)
-  }
+  const handleSetRegister = () => {
+    setRegister(!register);
+    console.log(register);
+  };
 
- 
   return (
-    <UserContext.Provider value={{ handleSignIn, handleRegistration,handleSetRegister, setRegister, register }}>
+    <UserContext.Provider
+      value={{
+        handleSignIn,
+        handleRegistration,
+        handleSetRegister,
+        setRegister,
+        register,
+        user,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
