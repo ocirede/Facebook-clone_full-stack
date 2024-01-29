@@ -21,6 +21,7 @@ const SignUp = () => {
             type="text"
             name="firstname"
             placeholder="First Name"
+            required
           />
         </div>
         <div>
@@ -36,6 +37,7 @@ const SignUp = () => {
             type="text"
             name="lastname"
             placeholder="Last Name"
+            required
           />
         </div>
       </div>
@@ -53,6 +55,7 @@ const SignUp = () => {
           type="text"
           name="emailorphone"
           placeholder="Email or Phone Number"
+          required
         />
       </div>
 
@@ -68,7 +71,7 @@ const SignUp = () => {
           id="password"
           type="password"
           name="password"
-
+          required
           placeholder="New Password"
         />
       </div>
@@ -184,6 +187,7 @@ const SignUp = () => {
               className="form-radio"
               name="gender"
               value="male"
+              required
             />
             <span className="ml-2">Male</span>
           </label>
@@ -193,6 +197,7 @@ const SignUp = () => {
               className="form-radio"
               name="gender"
               value="female"
+              required
             />
             <span className="ml-2">Female</span>
           </label>
