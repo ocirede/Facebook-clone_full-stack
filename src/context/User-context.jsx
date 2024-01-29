@@ -68,9 +68,10 @@ const UserProvider = ({ children }) => {
   };
   const handleSetRegister = () =>{
     setRegister(!register)
+    console.log(register)
   }
 
-
+ 
   return (
     <UserContext.Provider value={{ handleSignIn, handleRegistration,handleSetRegister, setRegister, register }}>
       {children}
