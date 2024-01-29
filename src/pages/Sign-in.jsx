@@ -1,14 +1,14 @@
-import { useEffect } from "react";
 import { useUserContext } from "../context/User-context";
 import SignUp from "./Sign-up";
 
 const SignIn = () => {
-  const { handleSignIn, handleSetRegister, register } = useUserContext();
-  
+  const { handleSignIn, handleSetRegister, setRegister, register } =
+    useUserContext();
+
   return (
     <>
       {register ? (
-         <SignUp />
+        <SignUp />
       ) : (
         <div className=" w-full flex justify-center items-center gap-32 h-screen bg-gray-100">
           <div className=" w-1/5 h-96 ">
@@ -68,7 +68,6 @@ const SignIn = () => {
               </div>
             </div>
           </div>
-          <div></div>
         </div>
       )}
     </>
