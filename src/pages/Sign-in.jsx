@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useUserContext } from "../context/User-context";
 import SignUp from "./Sign-up";
 
@@ -23,19 +22,20 @@ const SignIn = () => {
       </div>
       <div className="bg-white p-8 rounded-lg shadow-md flex items-center w-1/5 h-96">
         <div className="flex-1">
-          <form className="flex flex-col items-center">
+          <form onSubmit={handleSignIn} className="flex flex-col items-center">
             <input
               type="text"
+              name="emailOrPhone"
               className="border border-gray-300 px-4 py-2 mb-4 rounded-md w-full"
               placeholder="Email or Phone Number"
             />
             <input
               type="password"
+              name="password"
               className="border border-gray-300 px-4 py-2 mb-4 rounded-md w-full"
               placeholder="Password"
             />
             <button
-              onClick={handleSignIn}
               className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 w-full"
             >
               Log In
@@ -51,7 +51,7 @@ const SignIn = () => {
           <br />
           <div className="flex justify-center">
             <button
-              type="button"
+              type="submit"
               className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded-md w-1/2"
             >
               Create new account
