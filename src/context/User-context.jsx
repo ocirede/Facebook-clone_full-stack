@@ -7,6 +7,7 @@ export const useUserContext = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [register, setRegister] = useState(false)
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -40,6 +41,7 @@ const UserProvider = ({ children }) => {
     try {
       const newUser = await axios.post(baseURL + "/users/register", body);
       e.target.reset();
+      window.location.replace("/signin")
     } catch (err) {
       console.log(err);
     }
@@ -56,6 +58,7 @@ const UserProvider = ({ children }) => {
         const {data: user} = await axios.post(baseURL + "/users/login", body);
         localStorage.setItem("token", user.token);
         e.target.reset();
+        window.location.replace("/")
 
          console.log(user)
     } catch (error) {
@@ -63,9 +66,13 @@ const UserProvider = ({ children }) => {
       }
 
   };
+  const handleSetRegister = () =>{
+    setRegister(!register)
+  }
+
 
   return (
-    <UserContext.Provider value={{ handleSignIn, handleRegistration }}>
+    <UserContext.Provider value={{ handleSignIn, handleRegistration,handleSetRegister, setRegister, register }}>
       {children}
     </UserContext.Provider>
   );
