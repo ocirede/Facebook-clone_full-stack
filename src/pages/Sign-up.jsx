@@ -1,10 +1,10 @@
 import { useUserContext } from "../context/User-context";
 
 const SignUp = () => {
-  const { handleRegistration } = useUserContext();
+  const { handleRegistration, setRegister, register } = useUserContext();
   return (
     <form
-      onSubmit={handleRegistration}
+      onSubmit={ handleRegistration}
       className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
     >
       <div className="mb-4 flex">
@@ -19,7 +19,7 @@ const SignUp = () => {
             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="firstName"
             type="text"
-            name="name"
+            name="firstname"
             placeholder="First Name"
           />
         </div>
@@ -34,7 +34,7 @@ const SignUp = () => {
             className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="lastName"
             type="text"
-            name="surname"
+            name="lastname"
             placeholder="Last Name"
           />
         </div>
@@ -51,6 +51,7 @@ const SignUp = () => {
           className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           id="emailOrPhone"
           type="text"
+          name="emailorphone"
           placeholder="Email or Phone Number"
         />
       </div>
@@ -181,7 +182,7 @@ const SignUp = () => {
             <input
               type="radio"
               className="form-radio"
-              name="male"
+              name="gender"
               value="male"
             />
             <span className="ml-2">Male</span>
@@ -190,7 +191,7 @@ const SignUp = () => {
             <input
               type="radio"
               className="form-radio"
-              name="female"
+              name="gender"
               value="female"
             />
             <span className="ml-2">Female</span>
