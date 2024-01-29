@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import React, {useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import { useUserContext } from '../context/User-context';
+ import { useUserContext } from '../context/User-context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse, faCog, faCheese, faMoon, faTv, faShop, faUserGroup, faGamepad, faCubesStacked, faMessage, faBell, faEdit, faComment, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 
  const Navigation = () => {
-  // const { user} = useUserContext();
+   const { user} = useUserContext();
   const navigate = useNavigate();
   const[isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -70,7 +70,7 @@ import { faUser, faHouse, faCog, faCheese, faMoon, faTv, faShop, faUserGroup, fa
   <input
     type="text"
     placeholder="Search Facebook"
-    class="w-full border border-gray-300 rounded-full pl-10 px-4 py-2 focus:outline-none focus:border-blue-500"
+    className="w-full border border-gray-300 rounded-full pl-10 px-4 py-2 focus:outline-none focus:border-blue-500"
   />
 </div>
 </div>
