@@ -3,23 +3,21 @@ import { useUserContext } from "../context/User-context";
 const SignUp = () => {
   const { handleRegistration } = useUserContext();
   return (
-    <div className="flex justify-center items-center  h-screen bg-gray-100">
-    <div className="w-1/2 flex justify-center items-center gap-x-24 ">
-      <div className=" flex  flex-col text-center">
+    <div className=" w-full h-screen flex  justify-center items-center  gap-32 bg-gray-100">
+    <div className="w-1/5 h-96 flex flex-col justify-center">
         <img
           src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"
           alt="Facebook"
-          className="w-96"
         />
-        <p className="text-black mt-6 text-xl">
-          Connect with friends and the world {<br/>} around on Facebook.
-        </p>
-      </div>
+        <div>
+          <p className="ml-12 mb-6 text-2xl text-black">
+            Connect with friends and the world around on Facebook.
+          </p>
+        </div>
     </div>
-  
       <form
         onSubmit={handleRegistration}
-        className="max-w-md mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  -ml-10"
+        className="max-w-md  bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4  "
       >
         <div className="mb-4 flex">
           <div className="mr-2">
@@ -226,7 +224,7 @@ const SignUp = () => {
           </button>
         </div>
       </form>
-    </div>
+      </div>
   );
 };
 
