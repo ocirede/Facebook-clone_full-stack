@@ -61,6 +61,8 @@ const Navigation = () => {
 
   return (
     <>
+      {/* {user ? <p>hello {user.firstname}</p> : <p>malakia</p>} */}
+
       <nav
         id="header"
         className=" w-full top-0 text-gray-400 flex justify-between	"
