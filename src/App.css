@@ -1,4 +1,8 @@
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 
 @keyframes logo-spin {
   from {
@@ -21,4 +25,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} 
