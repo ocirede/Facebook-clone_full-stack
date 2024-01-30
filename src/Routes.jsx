@@ -5,10 +5,12 @@ import App from "./App";
 import Navigation from "./components/Navigation";
 import UserProvider from "./context/User-context";
 import SignIn from "./pages/Sign-in";
+import PostProvider from "./context/Post-context";
 export default function routes() {
   return (
     <>
       <BrowserRouter>
+      <PostProvider>
         <UserProvider>
           <Routes>
             <Route element={<HomeLayout />}>
@@ -18,6 +20,7 @@ export default function routes() {
             <Route path="/signin" element={<SignIn />} />
           </Routes>
         </UserProvider>
+        </PostProvider>
       </BrowserRouter>
     </>
   );

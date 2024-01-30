@@ -1,5 +1,6 @@
 import React from "react";
-import Feed from "./pages/Feed";
+import Header from "./components/Header";
+import Feed from "./components/Feed";
 import { useUserContext } from "./context/User-context";
 import SignIn from "./pages/Sign-in";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,6 +18,9 @@ import {
   faBell,
   faCog,
 } from "@fortawesome/free-solid-svg-icons";
+
+import PostForm from "./components/PostForm";
+
 function App() {
   const { user } = useUserContext();
   const chatHeadNames = [
@@ -101,6 +105,7 @@ function App() {
               </div>
             </div>
             <div className="flex-1 p-4">
+              <PostForm/>
               <Feed />
             </div>
             <div className="hidden xl:block w-1/6 p-4 bg-gray-200 -z-10">
@@ -119,6 +124,7 @@ function App() {
             </ul>
           </div>
           </div>
+
         </>
       ) : (
         <SignIn />
