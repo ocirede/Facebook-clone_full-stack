@@ -3,10 +3,7 @@ import { usePostContext } from "../context/Post-context.jsx";
 
 function Post({ post }) {
   const { deletePost } = usePostContext();
-  const handleDelete = () => {
-    deletePost(post._id);
-  };
-
+  
   return (
     <>
     {post ? (
@@ -42,7 +39,7 @@ function Post({ post }) {
             />
           </svg>
         </button>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={()=>deletePost(post._id)}>Delete</button>
       </div>
       <div></div>
     </div>
