@@ -14,10 +14,11 @@ export default function routes() {
         <UserProvider>
           <Routes>
             <Route element={<HomeLayout />}>
-            <Route path="/" element={<App />} />
+            <Route path="/home" element={<App />} />
             </Route>
-            <Route path="/*" element={<MainLayout />} />
-            <Route path="/signin" element={<SignIn />} />
+            <Route  element={<MainLayout />}>
+            <Route path="/" element={<SignIn />} />
+            </Route>
           </Routes>
         </UserProvider>
         </PostProvider>

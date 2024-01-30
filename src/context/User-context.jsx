@@ -1,14 +1,14 @@
 import axios from "../config/axiosConfig.js";
 import { baseURL } from "../config/api.js";
-import { createContext, useContext, useEffect, useState } from "react";
-
+import { createContext, useContext, useEffect, useState, } from "react";
+import { useNavigate } from "react-router-dom";
 const UserContext = createContext(null);
 export const useUserContext = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [register, setRegister] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log("token", token)
@@ -16,12 +16,12 @@ const UserProvider = ({ children }) => {
       if (token) {
         try {
           const response = await axios.get(baseURL + "/users/loggeduser");
-          setUser(response.data.user);
+         
           console.log("fetchedUser =====>", response.data);
         } catch (error) {
           console.log(error);
         }
-      }
+      } else {navigate("/");}
     };
 
     fetchUser();
@@ -59,7 +59,8 @@ const UserProvider = ({ children }) => {
       localStorage.setItem("token", user.token);
       console.log("set token", user)
       e.target.reset();
-      window.location.replace("/");
+      setUser(user);
+      navigate("/home");
 
       console.log(user);
     } catch (error) {

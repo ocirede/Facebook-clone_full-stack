@@ -49,6 +49,7 @@ export const signInUser = async (req, res) => {
       success: true,
       message: "Authentication successfull!",
       token,
+      user,
     });
 
     console.log("User logged in==>", user);
