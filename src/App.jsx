@@ -104,7 +104,7 @@ function App() {
                 </ul>
               </div>
             </div>
-            <div className="flex-1 p-4">
+            <div className="flex-1 p-4 w-1/2">
               <PostForm/>
               <Feed />
             </div>
