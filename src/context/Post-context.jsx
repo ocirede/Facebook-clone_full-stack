@@ -1,6 +1,7 @@
 import { baseURL } from "../config/api.js";
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "../config/axiosConfig.js";
+import { useUserContext } from "./User-context.jsx";
 
 const PostContext = createContext(null);
 
@@ -8,6 +9,8 @@ export const usePostContext = () => useContext(PostContext);
 
 const PostProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
+  const { user } = useUserContext();
+
   const [isLoading, setIsLoading] = useState(false);
 
   const getPost = async () => {
@@ -32,7 +35,7 @@ const PostProvider = ({ children }) => {
     formData.append("title", e.target.title.value);
     formData.append("content", e.target.content.value);
     formData.append("postImage", e.target.postImage.files[0]);
-
+    formData.append("author", user._id);
     console.log(formData);
     
     setIsLoading(true); 

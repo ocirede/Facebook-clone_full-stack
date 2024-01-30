@@ -1,15 +1,15 @@
 import { baseURL } from "../config/api.js";
-import { useUserContext } from "../context/User-context.jsx";
 
 function Post({ post }) {
-  const { user } = useUserContext();
-
   return (
-    <div className="bg-white p-4 w-96 rounded-md shadow-md">
+    <>
+    {post ? (
+      
+      <div className="bg-white p-4 w-96 rounded-md shadow-md">
       <div className="flex items-center mb-4">
         <div>
-          <p>Author: {user.firstname}</p>
-          <p className="font-bold">Post: {post.title}</p>
+          <p>Author: {post.author?.firstname}</p>
+          <p className="font-bold">Title: {post.title}</p>
           <p className="text-gray-500 text-sm">{post.createdAt}</p>
         </div>
       </div>
@@ -20,6 +20,8 @@ function Post({ post }) {
        
       </div>
     </div>
+    ) : (<p>loading...</p>)}
+    </>
   );
 }
 

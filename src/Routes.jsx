@@ -10,18 +10,18 @@ export default function routes() {
   return (
     <>
       <BrowserRouter>
-      <PostProvider>
         <UserProvider>
-          <Routes>
-            <Route element={<HomeLayout />}>
-            <Route path="/home" element={<App />} />
-            </Route>
-            <Route  element={<MainLayout />}>
-            <Route path="/" element={<SignIn />} />
-            </Route>
-          </Routes>
+          <PostProvider>
+            <Routes>
+              <Route element={<HomeLayout />}>
+                <Route path="/home" element={<App />} />
+              </Route>
+              <Route element={<MainLayout />}>
+                <Route path="/" element={<SignIn />} />
+              </Route>
+            </Routes>
+          </PostProvider>
         </UserProvider>
-        </PostProvider>
       </BrowserRouter>
     </>
   );

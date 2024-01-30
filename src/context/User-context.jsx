@@ -9,6 +9,7 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [register, setRegister] = useState(false);
   const navigate = useNavigate();
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log("token", token)
@@ -16,7 +17,7 @@ const UserProvider = ({ children }) => {
       if (token) {
         try {
           const response = await axios.get(baseURL + "/users/loggeduser");
-         
+          setUser(response.data.user)
           console.log("fetchedUser =====>", response.data);
         } catch (error) {
           console.log(error);
