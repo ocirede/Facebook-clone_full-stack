@@ -4,7 +4,8 @@ import { usePostContext } from '../context/Post-context';
 export default function PostForm() {
     const {createPost} = usePostContext()
     return (
-        <form onSubmit={createPost} className="flex flex-col items-center justify-center gap-8 w-full p-8 bg-white shadow-md rounded-lg">
+        <div className=' flex justify-center'>
+        <form onSubmit={createPost} className="flex flex-col items-center justify-center gap-8 w-1/4 p-8 bg-white shadow-md rounded-lg">
             <input
                 className="border p-2 w-full"
                 type="text"
@@ -28,5 +29,6 @@ export default function PostForm() {
                 Add Post
             </button>
         </form>
+        </div>
     );
 }
