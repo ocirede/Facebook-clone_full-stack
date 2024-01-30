@@ -66,6 +66,12 @@ const PostProvider = ({ children }) => {
 
   const deletePost = async (postId) => {
     try {
+      const response = await axios.delete(
+        baseURL + `/posts/deletepost/${postId}`
+      );
+      window.location.replace("/");
+      console.log(postId);
+      console.log(response.data.message);
     } catch (err) {
       console.log(err);
     }

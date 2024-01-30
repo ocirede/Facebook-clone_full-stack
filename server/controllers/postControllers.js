@@ -36,7 +36,16 @@ export const getAllPosts = async (req, res) => {
 export const deletePost = async (req, res) => {
   const { postId } = req.params;
   const findPost = await Post.findById(postId);
-  fs.unlinkSync(findPost.image);
+  console.log("find post", findPost);
+  const filePath = "uploads/post-image/" + findPost.image;
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      console.error("Error deleting file:", err);
+      return;
+    }
+    console.log("File deleted successfully");
+  });
+
   await Post.findByIdAndDelete(postId);
   res.json({ message: "Post deleted successfully!" });
 };
