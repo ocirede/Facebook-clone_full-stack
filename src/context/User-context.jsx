@@ -11,7 +11,7 @@ const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-
+    console.log("token", token)
     const fetchUser = async () => {
       if (token) {
         try {
@@ -57,6 +57,7 @@ const UserProvider = ({ children }) => {
     try {
       const { data: user } = await axios.post(baseURL + "/users/login", body);
       localStorage.setItem("token", user.token);
+      console.log("set token", user)
       e.target.reset();
       window.location.replace("/");
 

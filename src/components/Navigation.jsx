@@ -60,7 +60,7 @@ import {
 
   return (
     <>
-      {/* {user ? <p>hello {user.firstname}</p> : <p>malakia</p>} */}
+      {user ? <p>hello {user.firstname}</p> : <p>malakia</p>}
 
       <nav
         id="header"
