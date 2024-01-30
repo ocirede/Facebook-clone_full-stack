@@ -9,7 +9,7 @@ import Post from "../models/postSchema.js";
 
 export const createPost = async (req, res) => {
   try {
-    if (req.file) req.body.image = req.file;
+    if (req.file) req.body.image = req.file.filename;
 
     const newPost = new Post(req.body);
     await newPost.save();
