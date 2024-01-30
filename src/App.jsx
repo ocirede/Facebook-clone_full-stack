@@ -10,6 +10,7 @@ function App() {
     <div>
       {user ? (
         <>
+        <PostForm/>
           <Feed />
         </>
       ) : (
