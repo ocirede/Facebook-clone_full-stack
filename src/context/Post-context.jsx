@@ -9,8 +9,9 @@ export const usePostContext = () => useContext(PostContext);
 
 const PostProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const { user } = useUserContext();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const getPost = async () => {
     try {
