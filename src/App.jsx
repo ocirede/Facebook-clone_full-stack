@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./components/Header";
+import { Navigate } from "react-router-dom";
 import Feed from "./components/Feed";
 import { useUserContext } from "./context/User-context";
 import SignIn from "./pages/Sign-in";
@@ -23,6 +23,10 @@ import PostForm from "./components/PostForm";
 
 function App() {
   const { user } = useUserContext();
+  if (!user) {
+    return <Navigate />
+  }
+  
   const chatHeadNames = [
    
     "John Doe",
@@ -40,7 +44,7 @@ function App() {
   ];
   return (
     <div>
-      {user ? (
+      
         <>
           <div className="flex h-screen">
             <div className="hidden xl:block w-1/6 p-4 bg-gray-200">
@@ -126,9 +130,7 @@ function App() {
           </div>
 
         </>
-      ) : (
-        <SignIn />
-      )}
+     
     </div>
   );
 }
