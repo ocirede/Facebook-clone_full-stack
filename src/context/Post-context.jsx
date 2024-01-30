@@ -1,6 +1,6 @@
 import { baseURL } from "../config/api.js";
 import { createContext, useContext, useEffect, useState } from "react";
-import axios from "../config/axiosConfig.js";
+import axios from "axios";
 import { useUserContext } from "./User-context.jsx";
 
 const PostContext = createContext(null);
@@ -17,7 +17,7 @@ const PostProvider = ({ children }) => {
     try {
       const fetchPosts = await axios.get(baseURL + "/posts/fetchposts");
       setPosts(fetchPosts.data.posts);
-      console.log(fetchPosts.data.posts);
+      console.log("fetched posts",fetchPosts.data.posts);
     } catch (err) {
       console.log(err);
     }

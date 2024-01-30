@@ -13,6 +13,7 @@ const UserProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     console.log("token", token);
+
     const fetchUser = async () => {
       if (token) {
         try {
@@ -43,8 +44,8 @@ const UserProvider = ({ children }) => {
     };
     try {
       const newUser = await axios.post(baseURL + "/users/register", body);
+      setRegister(false)
       e.target.reset();
-      window.location.replace("/signin");
     } catch (err) {
       console.log(err);
     }
@@ -62,7 +63,7 @@ const UserProvider = ({ children }) => {
       localStorage.setItem("token", user.token);
       console.log("set token", user);
       e.target.reset();
-      setUser(user.user.firstname);
+      setUser(user);
       navigate("/home");
 
       console.log(user);

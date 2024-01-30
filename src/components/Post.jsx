@@ -2,6 +2,7 @@ import { baseURL } from "../config/api.js";
 import { usePostContext } from "../context/Post-context.jsx";
 
 function Post({ post }) {
+  console.log("post data", post)
   const { deletePost } = usePostContext();
 
   return (
