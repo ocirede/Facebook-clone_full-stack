@@ -62,7 +62,7 @@ const UserProvider = ({ children }) => {
       localStorage.setItem("token", user.token);
       console.log("set token", user);
       e.target.reset();
-      setUser(user.user.firstname);
+      setUser(user.firstname);
       navigate("/home");
 
       console.log(user);
