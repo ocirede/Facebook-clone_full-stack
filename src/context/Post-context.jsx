@@ -34,7 +34,7 @@ const PostProvider = ({ children }) => {
     formData.append("title", e.target.title.value);
     formData.append("content", e.target.content.value);
     formData.append("postImage", e.target.postImage.files[0]);
-    formData, append("author", user._id);
+    formData.append("author", user._id);
 
     console.log(formData);
 
@@ -47,7 +47,7 @@ const PostProvider = ({ children }) => {
       );
       const newPost = response.data;
       e.target.reset();
-      window.location.replace("/");
+      window.location.replace("/home");
       console.log(newPost);
     } catch (err) {
       console.log(err);
@@ -68,7 +68,7 @@ const PostProvider = ({ children }) => {
       const response = await axios.delete(
         baseURL + `/posts/deletepost/${postId}`
       );
-      window.location.replace("/");
+      window.location.replace("/home");
       console.log(postId);
       console.log(response.data.message);
     } catch (err) {
