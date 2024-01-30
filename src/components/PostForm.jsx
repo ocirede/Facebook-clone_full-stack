@@ -4,8 +4,8 @@ import { usePostContext } from '../context/Post-context';
 export default function PostForm() {
     const {createPost} = usePostContext()
     return (
-        <div className=' flex justify-center'>
-        <form onSubmit={createPost} className="flex flex-col items-center justify-center gap-8 w-1/4 p-8 bg-white shadow-md rounded-lg">
+        <div className=' flex justify-center w-full'>
+        <form onSubmit={createPost} className="fixed xl:flex xl:flex-col xl:items-center xl:justify-center xl:gap-8 xl:min-w-1/4 xl:p-8 xl:bg-white xl:shadow-md xl:rounded-lg lg:flex lg:flex-col lg:items-center lg:justify-center lg:gap-8 lg:w-1/4 lg:p-8 lg:bg-white lg:shadow-md lg:rounded-lg sm:flex sm:flex-col sm:items-center sm:justify-center sm:gap-8 sm:w-1/2 sm:p-8 sm:bg-white sm:shadow-md sm:rounded-lg xs:flex xs:flex-col xs:items-center xs:justify-center xs:gap-8 xs:w-1/2 xs:p-8 xs:bg-white xs:shadow-md xs:rounded-lg md:flex md:flex-col md:items-center md:justify-center md:gap-8 md:w-1/3 md:p-8 md:bg-white md:shadow-md md:rounded-lg">
             <input
                 className="border p-2 w-full"
                 type="text"

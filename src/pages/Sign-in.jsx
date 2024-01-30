@@ -10,23 +10,22 @@ const SignIn = () => {
       {register ? (
         <SignUp />
       ) : (
-        <div className=" w-full flex justify-center items-center gap-32 h-screen bg-gray-100">
-          <div className=" w-1/5 h-96 ">
-            <div className="flex-1 flex flex-col justify-center ml-2 ">
-              <img
-                src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"
-                alt="Facebook"
-              />
-              <div>
-                <p className=" ml-12  mb-6 text-2xl text-black">
-                  Connect with friends and the world around on Facebook.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="bg-white p-8 rounded-lg shadow-md flex items-center w-1/5 h-96">
-            <div className="flex-1">
-              <form
+        <div className="xl:w-full xl:flex xl:justify-center xl:items-center xl:gap-32 xl:h-screen xl:bg-gray-100">
+  <div className="w-full lg:w-1/2 xl:w-1/5 h-96 flex flex-col justify-center ml-2">
+    <img
+      src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"
+      alt="Facebook"
+      className="mx-auto"
+    />
+    <div>
+      <p className="ml-12 mb-6 text-2xl text-black text-center">
+        Connect with friends and the world around on Facebook.
+      </p>
+    </div>
+  </div>
+  <div className="bg-white p-8 rounded-lg shadow-md flex items-center w-full lg:w-1/2 xl:w-1/5 h-96">
+    <div className="flex-1">
+    <form
                 onSubmit={handleSignIn}
                 className="flex flex-col items-center"
               >
@@ -54,21 +53,22 @@ const SignIn = () => {
                   </a>
                 </div>
               </form>
-              <br />
-              <hr />
-              <br />
-              <div className="flex justify-center">
-                <button
-                  onClick={() => handleSetRegister()}
-                  type="button"
-                  className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded-md w-1/2"
-                >
-                  Create new account
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <br />
+      <hr />
+      <br />
+      <div className="flex justify-center">
+        <button
+          onClick={() => handleSetRegister()}
+          type="button"
+          className="bg-green-500 hover:bg-green-700 text-white px-4 py-4 rounded-md w-3/5 font-bold"
+        >
+          Create new account
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
       )}
     </>
   );
