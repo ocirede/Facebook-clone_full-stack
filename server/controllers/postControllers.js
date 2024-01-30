@@ -1,5 +1,5 @@
 import Post from "../models/postSchema.js";
-
+import fs from "fs";
 /*  const formdata = new FormData();
 
     formdata.append("title", title);
