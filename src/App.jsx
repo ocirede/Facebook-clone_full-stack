@@ -6,18 +6,28 @@ import SignIn from "./pages/Sign-in";
 import PostForm from "./components/PostForm";
 function App() {
   const { user } = useUserContext();
-
   return (
     <div>
-      <PostForm/>
- 
- <Feed />
-      
-         
-     
-        
+      {user ? (
+        <>
+          <Feed />
+        </>
+      ) : (
+        <SignIn />
+      )}
     </div>
   );
 }
-
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+

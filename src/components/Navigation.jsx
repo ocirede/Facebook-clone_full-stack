@@ -141,6 +141,11 @@ import {
                   className="absolute top-10 right-0 bg-white border-2 border-white rounded-md shadow-md w-64 p-2"
                 >
                   <button className="block w-full text-left py-4 px-4 hover:bg-gray-200">
+                    <div className="w-full h-full flex items-center justify-center font-bold">
+                  {user ? <p>Welcome {user.firstname} !</p> : <p>malakia</p>}
+                  </div>
+                  </button>
+                  <button className="block w-full text-left py-4 px-4 hover:bg-gray-200">
                     <FontAwesomeIcon icon={faCheese} className="mr-2" /> Meta
                     Business Suite
                   </button>
