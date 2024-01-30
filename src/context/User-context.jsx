@@ -1,6 +1,6 @@
 import axios from "../config/axiosConfig.js";
 import { baseURL } from "../config/api.js";
-import { createContext, useContext, useEffect, useState, } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const UserContext = createContext(null);
 export const useUserContext = () => useContext(UserContext);
@@ -11,17 +11,19 @@ const UserProvider = ({ children }) => {
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("token");
-    console.log("token", token)
+    console.log("token", token);
     const fetchUser = async () => {
       if (token) {
         try {
           const response = await axios.get(baseURL + "/users/loggeduser");
-         
+          setUser(response.data.user);
           console.log("fetchedUser =====>", response.data);
         } catch (error) {
           console.log(error);
         }
-      } else {navigate("/");}
+      } else {
+        navigate("/");
+      }
     };
 
     fetchUser();
@@ -57,7 +59,7 @@ const UserProvider = ({ children }) => {
     try {
       const { data: user } = await axios.post(baseURL + "/users/login", body);
       localStorage.setItem("token", user.token);
-      console.log("set token", user)
+      console.log("set token", user);
       e.target.reset();
       setUser(user);
       navigate("/home");

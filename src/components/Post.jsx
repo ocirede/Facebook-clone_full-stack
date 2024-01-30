@@ -3,14 +3,12 @@ import { usePostContext } from "../context/Post-context.jsx";
 
 function Post({ post }) {
   const { deletePost } = usePostContext();
-  const handleDelete = () => {
-    deletePost(post._id);
-  };
 
   return (
     <div className="bg-white p-4 w-96 rounded-md shadow-md">
       <div className="flex items-center mb-4">
         <div>
+          <p>Author: {post.author?.firstname}</p>
           <p className="font-bold">{post.title}</p>
           <p className="text-gray-500 text-sm">{post.createdAt}</p>
         </div>
@@ -38,7 +36,13 @@ function Post({ post }) {
             />
           </svg>
         </button>
-        <button onClick={handleDelete}>Delete</button>
+        <button
+          onClick={() => {
+            deletePost(post._id);
+          }}
+        >
+          Delete
+        </button>
       </div>
       <div></div>
     </div>
@@ -46,4 +50,3 @@ function Post({ post }) {
 }
 
 export default Post;
-
