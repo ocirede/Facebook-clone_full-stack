@@ -10,8 +10,9 @@ export default function routes() {
   return (
     <>
       <BrowserRouter>
-        <UserProvider>
-          <PostProvider>
+      <UserProvider>
+
+        <PostProvider>
             <Routes>
               <Route element={<HomeLayout />}>
                 <Route path="/home" element={<App />} />
@@ -20,8 +21,9 @@ export default function routes() {
                 <Route path="/" element={<SignIn />} />
               </Route>
             </Routes>
-          </PostProvider>
+        </PostProvider>
         </UserProvider>
+
       </BrowserRouter>
     </>
   );

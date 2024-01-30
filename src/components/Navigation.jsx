@@ -22,6 +22,7 @@ import {
 
 const Navigation = () => {
   const { user } = useUserContext();
+  console.log("navbar user",user)
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
